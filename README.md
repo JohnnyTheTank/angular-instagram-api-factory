@@ -26,14 +26,14 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 
 ```js
 instagramFactory.getPostsFromUserById({
-    userId: <USER_ID>,
-    count: <COUNT>, // (optional) default: 20
-    min_id: <MIN_ID>, // (optional)
-    max_id: <MAX_ID>, // (optional)
-    min_timestamp: <MIN_TIMESTAMP>, // (optional)
-    max_timestamp: <MAX_TIMESTAMP>, // (optional)
-    access_token: <YOUR_ACCESS_TOKEN>,
-    client_id: <YOUR_CLIENT_ID>,
+    userId: "<USER_ID>",
+    count: "<COUNT>", // (optional) default: 20
+    min_id: "<MIN_ID>", // (optional)
+    max_id: "<MAX_ID>", // (optional)
+    min_timestamp: "<MIN_TIMESTAMP>", // (optional)
+    max_timestamp: "<MAX_TIMESTAMP>", // (optional)
+    access_token: "<YOUR_ACCESS_TOKEN>",
+    client_id: "<YOUR_CLIENT_ID>",
 }).success(function (_data) {
     //on success
 }).error(function (_data) {
@@ -43,14 +43,14 @@ instagramFactory.getPostsFromUserById({
 
 ```js
 instagramFactory.getPostsByTag({
-    tag: <TAG>,
-    count: <COUNT>, // (optional) default: 20
-    min_tag_id: <MIN_TAG_ID>, // (optional)
-    max_tag_id: <MAX_TAG_ID>, // (optional)
-    min_timestamp: <MIN_TIMESTAMP>, // (optional)
-    max_timestamp: <MAX_TIMESTAMP>, // (optional)
-    access_token: <YOUR_ACCESS_TOKEN>,
-    client_id: <YOUR_CLIENT_ID>,
+    tag: "<TAG>",
+    count: "<COUNT>", // (optional) default: 20
+    min_tag_id: "<MIN_TAG_ID>", // (optional)
+    max_tag_id: "<MAX_TAG_ID>", // (optional)
+    min_timestamp: "<MIN_TIMESTAMP>", // (optional)
+    max_timestamp: "<MAX_TIMESTAMP>", // (optional)
+    access_token: "<YOUR_ACCESS_TOKEN>",
+    client_id: "<YOUR_CLIENT_ID>",
 }).success(function (_data) {
     //on success
 }).error(function (_data) {
@@ -62,9 +62,9 @@ instagramFactory.getPostsByTag({
 #### getUser
 ```js
 instagramFactory.getUserById({
-    userId: <USER_ID>,
-    access_token: <YOUR_ACCESS_TOKEN>,
-    client_id: <YOUR_CLIENT_ID>,
+    userId: "<USER_ID>",
+    access_token: "<YOUR_ACCESS_TOKEN>",
+    client_id: "<YOUR_CLIENT_ID>",
 }).success(function (_data) {
     //on success
 }).error(function (_data) {
