@@ -53,10 +53,20 @@ angular.module("jtt_instagram", [])
         return instagramFactory;
     }])
     .service('instagramSearchDataService', function () {
-        this.getInstagramApiBaseUrl = function (_params) {
+        this.getApiBaseUrl = function (_params) {
             return "https://api.instagram.com/v1/";
         };
 
+        this.fillDataInObjectByList = function(_object, _params, _list) {
+
+            angular.forEach(_list, function (value, key) {
+                if(typeof _params[value] !== "undefined") {
+                    _object.object[value] = _params[value];
+                }
+            });
+
+            return _object;
+        };
 
         this.getNew = function (_type, _params) {
 
@@ -73,53 +83,29 @@ angular.module("jtt_instagram", [])
 
             switch (_type) {
                 case "userById":
-                    instagramSearchData.url = this.getInstagramApiBaseUrl()+"users/" + _params.userId;
+                    instagramSearchData.url = this.getApiBaseUrl()+"users/" + _params.userId;
                     break;
 
                 case "postsFromUserById":
 
                     instagramSearchData.object.count = _params.count || 20;
 
-                    if (typeof _params.max_id != 'undefined') {
-                        instagramSearchData.object.max_id = _params.max_id;
-                    }
+                    instagramSearchData = this.fillDataInObjectByList(instagramSearchData, _params, [
+                        'max_id', 'min_id', 'min_timestamp', 'max_timestamp'
+                    ]);
 
-                    if (typeof _params.min_id != 'undefined') {
-                        instagramSearchData.object.min_id = _params.min_id;
-                    }
-
-                    if (typeof _params.min_timestamp != 'undefined') {
-                        instagramSearchData.object.min_timestamp = _params.min_timestamp;
-                    }
-
-                    if (typeof _params.max_timestamp != 'undefined') {
-                        instagramSearchData.object.max_timestamp = _params.max_timestamp;
-                    }
-
-                    instagramSearchData.url = this.getInstagramApiBaseUrl()+"users/" + _params.userId + "/media/recent";
+                    instagramSearchData.url = this.getApiBaseUrl()+"users/" + _params.userId + "/media/recent";
                     break;
 
                 case "postsByTag":
 
                     instagramSearchData.object.count = _params.count || 20;
 
-                    if (typeof _params.max_tag_id != 'undefined') {
-                        instagramSearchData.object.max_tag_id = _params.max_tag_id;
-                    }
+                    instagramSearchData = this.fillDataInObjectByList(instagramSearchData, _params, [
+                        'max_tag_id', 'min_tag_id', 'min_timestamp', 'max_timestamp'
+                    ]);
 
-                    if (typeof _params.min_tag_id != 'undefined') {
-                        instagramSearchData.object.min_tag_id = _params.min_tag_id;
-                    }
-
-                    if (typeof _params.min_timestamp != 'undefined') {
-                        instagramSearchData.object.min_timestamp = _params.min_timestamp;
-                    }
-
-                    if (typeof _params.max_timestamp != 'undefined') {
-                        instagramSearchData.object.max_timestamp = _params.max_timestamp;
-                    }
-
-                    instagramSearchData.url = this.getInstagramApiBaseUrl()+"tags/" + _params.tag + "/media/recent";
+                    instagramSearchData.url = this.getApiBaseUrl()+"tags/" + _params.tag + "/media/recent";
                     break;
 
             }
