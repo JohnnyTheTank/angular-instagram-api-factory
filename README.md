@@ -21,11 +21,11 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 
 ### factory methods
 
-#### getPosts
+#### getMedia
 
 
 ```js
-instagramFactory.getPostsFromUserById({
+instagramFactory.getMediaFromUserById({
     userId: "<USER_ID>",
     count: "<COUNT>", // (optional) default: 20
     min_id: "<MIN_ID>", // (optional)
@@ -42,7 +42,7 @@ instagramFactory.getPostsFromUserById({
 ```
 
 ```js
-instagramFactory.getPostsByTag({
+instagramFactory.getMediaByTag({
     tag: "<TAG>",
     count: "<COUNT>", // (optional) default: 20
     min_tag_id: "<MIN_TAG_ID>", // (optional)

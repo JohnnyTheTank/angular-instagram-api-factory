@@ -24,9 +24,9 @@ angular.module("jtt_instagram", [])
             );
         };
 
-        instagramFactory.getPostsFromUserById = function (_params) {
+        instagramFactory.getMediaFromUserById = function (_params) {
 
-            var instagramSearchData = instagramSearchDataService.getNew("postsFromUserById", _params);
+            var instagramSearchData = instagramSearchDataService.getNew("mediaFromUserById", _params);
 
             return $http.jsonp(
                 instagramSearchData.url,
@@ -37,9 +37,9 @@ angular.module("jtt_instagram", [])
             );
         };
 
-        instagramFactory.getPostsByTag = function (_params) {
+        instagramFactory.getMediaByTag = function (_params) {
 
-            var instagramSearchData = instagramSearchDataService.getNew("postsByTag", _params);
+            var instagramSearchData = instagramSearchDataService.getNew("mediaByTag", _params);
 
             return $http.jsonp(
                 instagramSearchData.url,
@@ -86,7 +86,7 @@ angular.module("jtt_instagram", [])
                     instagramSearchData.url = this.getApiBaseUrl()+"users/" + _params.userId;
                     break;
 
-                case "postsFromUserById":
+                case "mediaFromUserById":
 
                     instagramSearchData.object.count = _params.count || 20;
 
@@ -97,7 +97,7 @@ angular.module("jtt_instagram", [])
                     instagramSearchData.url = this.getApiBaseUrl()+"users/" + _params.userId + "/media/recent";
                     break;
 
-                case "postsByTag":
+                case "mediaByTag":
 
                     instagramSearchData.object.count = _params.count || 20;
 
