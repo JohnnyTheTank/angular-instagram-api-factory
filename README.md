@@ -58,6 +58,39 @@ instagramFactory.getMediaByTag({
 });
 ```
 
+```js
+instagramFactory.getMediaFromLocationById({
+    locationId: "<LOCATION_ID>",
+    count: "<COUNT>", // (optional) default: 20
+    min_id: "<MIN_ID>", // (optional)
+    max_id: "<MAX_ID>", // (optional)
+    min_timestamp: "<MIN_TIMESTAMP>", // (optional)
+    max_timestamp: "<MAX_TIMESTAMP>", // (optional)
+    access_token: "<YOUR_ACCESS_TOKEN>",
+    client_id: "<YOUR_CLIENT_ID>",
+}).success(function (_data) {
+    //on success
+}).error(function (_data) {
+    //on error
+});
+```
+
+```js
+instagramFactory.getMediaByCoordinates({
+    lat: "<LAT>",
+    lng: "<LNG>",
+    distance: "<DISTANCE>", // (optional) in meters, default: 1000
+    count: "<COUNT>", // (optional) default: 20 (this parameter maybe don't work correct)
+    min_timestamp: "<MIN_TIMESTAMP>", // (optional)
+    max_timestamp: "<MAX_TIMESTAMP>", // (optional)
+    access_token: "<YOUR_ACCESS_TOKEN>",
+    client_id: "<YOUR_CLIENT_ID>",
+}).success(function (_data) {
+    //on success
+}).error(function (_data) {
+    //on error
+});
+```
 
 #### getUser
 ```js

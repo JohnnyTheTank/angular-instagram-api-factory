@@ -32,4 +32,23 @@ app.controller('controller', ['$scope', 'instagramFactory', function($scope, ins
         console.info("media by tag", _data);
     });
 
+    instagramFactory.getMediaFromLocationById({
+        locationId:"24245",
+        access_token:_access_token,
+        client_id:_client_id,
+    }).success(function(_data){
+        console.info("media from location by id", _data);
+    });
+
+    instagramFactory.getMediaByCoordinates({
+        lat:"48.097919294",
+        lng:"11.55422501",
+        distance:5000,
+        count:20,
+        access_token:_access_token,
+        client_id:_client_id,
+    }).success(function(_data){
+        console.info("media from coordinates", _data);
+    });
+
 }]);

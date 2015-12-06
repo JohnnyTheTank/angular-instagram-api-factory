@@ -50,6 +50,32 @@ angular.module("jtt_instagram", [])
             );
         };
 
+        instagramFactory.getMediaFromLocationById = function (_params) {
+
+            var instagramSearchData = instagramSearchDataService.getNew("mediaFromLocationById", _params);
+
+            return $http.jsonp(
+                instagramSearchData.url,
+                {
+                    method: 'GET',
+                    params: instagramSearchData.object,
+                }
+            );
+        };
+
+        instagramFactory.getMediaByCoordinates= function (_params) {
+
+            var instagramSearchData = instagramSearchDataService.getNew("mediaByCoordinates", _params);
+
+            return $http.jsonp(
+                instagramSearchData.url,
+                {
+                    method: 'GET',
+                    params: instagramSearchData.object,
+                }
+            );
+        };
+
         return instagramFactory;
     }])
     .service('instagramSearchDataService', function () {
@@ -87,27 +113,36 @@ angular.module("jtt_instagram", [])
                     break;
 
                 case "mediaFromUserById":
-
                     instagramSearchData.object.count = _params.count || 20;
-
                     instagramSearchData = this.fillDataInObjectByList(instagramSearchData, _params, [
                         'max_id', 'min_id', 'min_timestamp', 'max_timestamp'
                     ]);
-
                     instagramSearchData.url = this.getApiBaseUrl()+"users/" + _params.userId + "/media/recent";
                     break;
 
                 case "mediaByTag":
-
                     instagramSearchData.object.count = _params.count || 20;
-
                     instagramSearchData = this.fillDataInObjectByList(instagramSearchData, _params, [
                         'max_tag_id', 'min_tag_id', 'min_timestamp', 'max_timestamp'
                     ]);
-
                     instagramSearchData.url = this.getApiBaseUrl()+"tags/" + _params.tag + "/media/recent";
                     break;
 
+                case "mediaFromLocationById":
+                    instagramSearchData.object.count = _params.count || 40;
+                    instagramSearchData = this.fillDataInObjectByList(instagramSearchData, _params, [
+                        'max_id', 'min_id', 'min_timestamp', 'max_timestamp'
+                    ]);
+                    instagramSearchData.url = this.getApiBaseUrl()+"locations/" + _params.locationId + "/media/recent";
+                    break;
+
+                case "mediaByCoordinates":
+                    instagramSearchData.object.count = _params.count || 20;
+                    instagramSearchData = this.fillDataInObjectByList(instagramSearchData, _params, [
+                        'lat', 'lng', 'distance', 'min_timestamp', 'max_timestamp'
+                    ]);
+                    instagramSearchData.url = this.getApiBaseUrl()+"media/search";
+                    break;
             }
 
             return instagramSearchData;
