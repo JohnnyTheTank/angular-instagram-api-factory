@@ -2,13 +2,11 @@ var app = angular.module("app", ['jtt_instagram']);
 app.controller('controller', ['$scope', 'instagramFactory', function($scope, instagramFactory) {
 
     var _access_token = "<YOUR_ACCESS_TOKEN>";
-    var _client_id = "<YOUR_CLIENT_ID>";
 
     // user id converter: http://jelled.com/instagram/lookup-user-id
     instagramFactory.getUserById({
         userId:"416104304",
         access_token:_access_token,
-        client_id:_client_id,
     }).success(function(_data){
         console.info("user by id", _data);
     });
@@ -18,7 +16,6 @@ app.controller('controller', ['$scope', 'instagramFactory', function($scope, ins
         userId:"416104304",
         count:20,
         access_token:_access_token,
-        client_id:_client_id,
     }).success(function(_data){
         console.info("media from user by id", _data);
     });
@@ -27,7 +24,6 @@ app.controller('controller', ['$scope', 'instagramFactory', function($scope, ins
         tag:"camping",
         count:20,
         access_token:_access_token,
-        client_id:_client_id,
     }).success(function(_data){
         console.info("media by tag", _data);
     });
@@ -35,7 +31,6 @@ app.controller('controller', ['$scope', 'instagramFactory', function($scope, ins
     instagramFactory.getMediaFromLocationById({
         locationId:"24245",
         access_token:_access_token,
-        client_id:_client_id,
     }).success(function(_data){
         console.info("media from location by id", _data);
     });
@@ -46,7 +41,6 @@ app.controller('controller', ['$scope', 'instagramFactory', function($scope, ins
         distance:5000,
         count:20,
         access_token:_access_token,
-        client_id:_client_id,
     }).success(function(_data){
         console.info("media from coordinates", _data);
     });

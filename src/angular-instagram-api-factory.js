@@ -103,7 +103,6 @@ angular.module("jtt_instagram", [])
 
             instagramSearchData.object = {
                 access_token: _params.access_token,
-                client_id: _params.client_id,
                 callback: "JSON_CALLBACK"
             };
 

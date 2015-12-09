@@ -1,6 +1,6 @@
 {
   "name": "angular-instagram-api-factory",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "angularjs factory for instagram json rest api requests",
   "main": "Gruntfile.js",
   "scripts": {

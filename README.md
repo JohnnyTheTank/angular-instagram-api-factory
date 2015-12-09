@@ -33,7 +33,6 @@ instagramFactory.getMediaFromUserById({
     min_timestamp: "<MIN_TIMESTAMP>", // (optional)
     max_timestamp: "<MAX_TIMESTAMP>", // (optional)
     access_token: "<YOUR_ACCESS_TOKEN>",
-    client_id: "<YOUR_CLIENT_ID>",
 }).success(function (_data) {
     //on success
 }).error(function (_data) {
@@ -50,7 +49,6 @@ instagramFactory.getMediaByTag({
     min_timestamp: "<MIN_TIMESTAMP>", // (optional)
     max_timestamp: "<MAX_TIMESTAMP>", // (optional)
     access_token: "<YOUR_ACCESS_TOKEN>",
-    client_id: "<YOUR_CLIENT_ID>",
 }).success(function (_data) {
     //on success
 }).error(function (_data) {
@@ -67,7 +65,6 @@ instagramFactory.getMediaFromLocationById({
     min_timestamp: "<MIN_TIMESTAMP>", // (optional)
     max_timestamp: "<MAX_TIMESTAMP>", // (optional)
     access_token: "<YOUR_ACCESS_TOKEN>",
-    client_id: "<YOUR_CLIENT_ID>",
 }).success(function (_data) {
     //on success
 }).error(function (_data) {
@@ -84,7 +81,6 @@ instagramFactory.getMediaByCoordinates({
     min_timestamp: "<MIN_TIMESTAMP>", // (optional)
     max_timestamp: "<MAX_TIMESTAMP>", // (optional)
     access_token: "<YOUR_ACCESS_TOKEN>",
-    client_id: "<YOUR_CLIENT_ID>",
 }).success(function (_data) {
     //on success
 }).error(function (_data) {
@@ -97,7 +93,6 @@ instagramFactory.getMediaByCoordinates({
 instagramFactory.getUserById({
     userId: "<USER_ID>",
     access_token: "<YOUR_ACCESS_TOKEN>",
-    client_id: "<YOUR_CLIENT_ID>",
 }).success(function (_data) {
     //on success
 }).error(function (_data) {
