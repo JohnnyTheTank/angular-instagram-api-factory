@@ -16,7 +16,7 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
     <script src="bower_components/angular-instagram-api-factory/src/angular-instagram-api-factory.js"></script>
     ```
 
-4. Use the factory `instagramFactory`.
+4. Use the factory `instagramFactory`
 
 
 ### factory methods
