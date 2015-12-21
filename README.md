@@ -27,7 +27,7 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 ```js
 instagramFactory.getMediaFromUserById({
     userId: "<USER_ID>",
-    count: "<COUNT>", // (optional) default: 20
+    count: "<COUNT>", // (optional) valid values: 1-33 | default: 20
     min_id: "<MIN_ID>", // (optional)
     max_id: "<MAX_ID>", // (optional)
     min_timestamp: "<MIN_TIMESTAMP>", // (optional)
@@ -43,7 +43,7 @@ instagramFactory.getMediaFromUserById({
 ```js
 instagramFactory.getMediaByTag({
     tag: "<TAG>",
-    count: "<COUNT>", // (optional) default: 20
+    count: "<COUNT>", // (optional) valid values: 1-33 | default: 20
     min_tag_id: "<MIN_TAG_ID>", // (optional)
     max_tag_id: "<MAX_TAG_ID>", // (optional)
     min_timestamp: "<MIN_TIMESTAMP>", // (optional)
@@ -59,7 +59,7 @@ instagramFactory.getMediaByTag({
 ```js
 instagramFactory.getMediaFromLocationById({
     locationId: "<LOCATION_ID>",
-    count: "<COUNT>", // (optional) default: 20
+    count: "<COUNT>", // (optional) valid values: 1-33 | default: 20
     min_id: "<MIN_ID>", // (optional)
     max_id: "<MAX_ID>", // (optional)
     min_timestamp: "<MIN_TIMESTAMP>", // (optional)
@@ -77,7 +77,7 @@ instagramFactory.getMediaByCoordinates({
     lat: "<LAT>",
     lng: "<LNG>",
     distance: "<DISTANCE>", // (optional) in meters, default: 1000
-    count: "<COUNT>", // (optional) default: 20 (this parameter maybe don't work correct)
+    count: "<COUNT>", // (optional) valid values: 1-33 | default: 20 (this parameter maybe don't work correct)
     min_timestamp: "<MIN_TIMESTAMP>", // (optional)
     max_timestamp: "<MAX_TIMESTAMP>", // (optional)
     access_token: "<YOUR_ACCESS_TOKEN>",

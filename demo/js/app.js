@@ -1,7 +1,7 @@
 var app = angular.module("app", ['jtt_instagram']);
 app.controller('controller', ['$scope', 'instagramFactory', function($scope, instagramFactory) {
 
-    var _access_token = "<YOUR_ACCESS_TOKEN>";
+    var _access_token = '<YOUR_ACCESS_TOKEN>';
 
     // user id converter: http://jelled.com/instagram/lookup-user-id
     instagramFactory.getUserById({
@@ -14,7 +14,6 @@ app.controller('controller', ['$scope', 'instagramFactory', function($scope, ins
     // user id converter: http://jelled.com/instagram/lookup-user-id
     instagramFactory.getMediaFromUserById({
         userId:"416104304",
-        count:20,
         access_token:_access_token,
     }).success(function(_data){
         console.info("media from user by id", _data);

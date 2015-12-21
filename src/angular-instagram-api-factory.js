@@ -97,22 +97,24 @@ angular.module("jtt_instagram", [])
         this.getNew = function (_type, _params) {
 
             var instagramSearchData = {
-                object: {},
+                object: {
+                    access_token: _params.access_token,
+                    callback: "JSON_CALLBACK"
+                },
                 url: "",
             };
 
-            instagramSearchData.object = {
-                access_token: _params.access_token,
-                callback: "JSON_CALLBACK"
-            };
+            if(typeof _params.count !== "undefined") {
+                instagramSearchData.object.count = _params.count;
+            }
 
             switch (_type) {
                 case "userById":
+                    instagramSearchData.object.count = undefined;
                     instagramSearchData.url = this.getApiBaseUrl()+"users/" + _params.userId;
                     break;
 
                 case "mediaFromUserById":
-                    instagramSearchData.object.count = _params.count || 20;
                     instagramSearchData = this.fillDataInObjectByList(instagramSearchData, _params, [
                         'max_id', 'min_id', 'min_timestamp', 'max_timestamp'
                     ]);
@@ -120,7 +122,6 @@ angular.module("jtt_instagram", [])
                     break;
 
                 case "mediaByTag":
-                    instagramSearchData.object.count = _params.count || 20;
                     instagramSearchData = this.fillDataInObjectByList(instagramSearchData, _params, [
                         'max_tag_id', 'min_tag_id', 'min_timestamp', 'max_timestamp'
                     ]);
@@ -128,7 +129,6 @@ angular.module("jtt_instagram", [])
                     break;
 
                 case "mediaFromLocationById":
-                    instagramSearchData.object.count = _params.count || 40;
                     instagramSearchData = this.fillDataInObjectByList(instagramSearchData, _params, [
                         'max_id', 'min_id', 'min_timestamp', 'max_timestamp'
                     ]);
@@ -136,7 +136,6 @@ angular.module("jtt_instagram", [])
                     break;
 
                 case "mediaByCoordinates":
-                    instagramSearchData.object.count = _params.count || 20;
                     instagramSearchData = this.fillDataInObjectByList(instagramSearchData, _params, [
                         'lat', 'lng', 'distance', 'min_timestamp', 'max_timestamp'
                     ]);
