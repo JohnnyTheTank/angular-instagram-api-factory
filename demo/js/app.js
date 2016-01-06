@@ -7,7 +7,7 @@ app.controller('controller', ['$scope', 'instagramFactory', function($scope, ins
     instagramFactory.getUserById({
         userId:"416104304",
         access_token:_access_token,
-    }).success(function(_data){
+    }).then(function(_data){
         console.info("user by id", _data);
     });
 
@@ -15,7 +15,7 @@ app.controller('controller', ['$scope', 'instagramFactory', function($scope, ins
     instagramFactory.getMediaFromUserById({
         userId:"416104304",
         access_token:_access_token,
-    }).success(function(_data){
+    }).then(function(_data){
         console.info("media from user by id", _data);
     });
 
@@ -23,14 +23,14 @@ app.controller('controller', ['$scope', 'instagramFactory', function($scope, ins
         tag:"camping",
         count:20,
         access_token:_access_token,
-    }).success(function(_data){
+    }).then(function(_data){
         console.info("media by tag", _data);
     });
 
     instagramFactory.getMediaFromLocationById({
         locationId:"24245",
         access_token:_access_token,
-    }).success(function(_data){
+    }).then(function(_data){
         console.info("media from location by id", _data);
     });
 
@@ -40,7 +40,7 @@ app.controller('controller', ['$scope', 'instagramFactory', function($scope, ins
         distance:5000,
         count:20,
         access_token:_access_token,
-    }).success(function(_data){
+    }).then(function(_data){
         console.info("media from coordinates", _data);
     });
 
