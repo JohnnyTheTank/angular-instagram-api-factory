@@ -1,7 +1,9 @@
 **angular-instagram-api-factory** is an angularjs module with a instagram api factory.
 
-Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
+[![npm version](https://badge.fury.io/js/angular-instagram-api-factory.png)](https://badge.fury.io/js/angular-instagram-api-factory)
+[![Bower version](https://badge.fury.io/bo/angular-instagram-api-factory.png)](https://badge.fury.io/bo/angular-instagram-api-factory)
 
+Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 
 ## Usage
 
