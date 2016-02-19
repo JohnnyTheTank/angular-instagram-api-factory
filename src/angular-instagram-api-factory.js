@@ -80,7 +80,7 @@ angular.module("jtt_instagram", [])
         this.fillDataInObjectByList = function(_object, _params, _list) {
 
             angular.forEach(_list, function (value, key) {
-                if(typeof _params[value] !== "undefined") {
+                if(angular.isDefined(_params[value])) {
                     _object.object[value] = _params[value];
                 }
             });
@@ -98,7 +98,7 @@ angular.module("jtt_instagram", [])
                 url: "",
             };
 
-            if(typeof _params.count !== "undefined") {
+            if(angular.isDefined(_params.count)) {
                 instagramSearchData.object.count = _params.count;
             }
 
@@ -136,7 +136,6 @@ angular.module("jtt_instagram", [])
                     instagramSearchData.url = this.getApiBaseUrl()+"media/search";
                     break;
             }
-
             return instagramSearchData;
         };
     });
