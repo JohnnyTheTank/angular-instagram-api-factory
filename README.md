@@ -5,6 +5,9 @@
 
 Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 
+:warning: **This use case is no more supported. On June 1, 2016 Instagram changed the permissions and all apps moved automatically to Sandbox Mode if it wasn't approved through the review process.**
+
+
 ## Usage
 
 1. Install via either [bower](http://bower.io/), [npm](https://www.npmjs.com/) or downloaded files:
