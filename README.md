@@ -5,7 +5,7 @@
 
 Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 
-:warning: **This use case is not supported anymore. On June 1, 2016 Instagram changed the permissions and all apps moved automatically to Sandbox Mode if it wasn't approved through the [review process](https://www.instagram.com/developer/review/).**
+:warning: **This use case is not supported anymore. On June 1, 2016 Instagram changed the permissions and all apps moved automatically to Sandbox Mode if they wasn't approved through the [review process](https://www.instagram.com/developer/review/).**
 
 
 ## Usage
