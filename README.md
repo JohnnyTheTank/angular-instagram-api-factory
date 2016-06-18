@@ -18,11 +18,11 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 3. Include dependencies in your HTML.
     1. When using bower:
     ```html
-    <script src="bower_components/angular-instagram-api-factory/src/angular-instagram-api-factory.min.js"></script>
+    <script src="bower_components/angular-instagram-api-factory/dist/angular-instagram-api-factory.min.js"></script>
     ```
     2. When using npm:
     ```html
-    <script src="node_modules/angular-instagram-api-factory/src/angular-instagram-api-factory.min.js"></script>
+    <script src="node_modules/angular-instagram-api-factory/dist/angular-instagram-api-factory.min.js"></script>
     ```
     3. when using downloaded files
     ```html
@@ -115,7 +115,7 @@ instagramFactory.getUserById({
 
 ## Instagram JSONP API
 
-* Doku: https://instagram.com/developer/endpoints/
+* Docs: https://instagram.com/developer/endpoints/
 * Api Console: https://apigee.com/console/instagram
 * Username Converter: http://jelled.com/instagram/lookup-user-id
 
