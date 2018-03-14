@@ -1,6 +1,6 @@
 /**
     @name: angular-instagram-api-factory 
-    @version: 0.6.0 (13-03-2018) 
+    @version: 0.6.0 (14-03-2018) 
     @author: Jonathan Hornung 
     @url: https://github.com/JohnnyTheTank/angular-instagram-api-factory#readme 
     @license: MIT
@@ -143,8 +143,6 @@ angular.module("jtt_instagram", [])
                     instagramSearchData.url = this.getApiBaseUrl()+"media/search";
                     break;
             }
-
-            instagramSearchData.url
 
             return instagramSearchData;
         };

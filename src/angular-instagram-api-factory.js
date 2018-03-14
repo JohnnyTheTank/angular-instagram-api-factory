@@ -137,8 +137,6 @@ angular.module("jtt_instagram", [])
                     break;
             }
 
-            instagramSearchData.url
-
             return instagramSearchData;
         };
     });
