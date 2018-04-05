@@ -3,3 +3,5 @@
 /bower_components
 /.idea/
 /.codekit-cache/
+
+package-lock.json

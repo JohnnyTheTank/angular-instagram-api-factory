@@ -1,6 +1,6 @@
 /**
     @name: angular-instagram-api-factory 
-    @version: 0.5.0 (19-02-2016) 
+    @version: 0.6.0 (14-03-2018) 
     @author: Jonathan Hornung 
     @url: https://github.com/JohnnyTheTank/angular-instagram-api-factory#readme 
     @license: MIT
@@ -8,7 +8,7 @@
 "use strict";
 
 angular.module("jtt_instagram", [])
-    .factory('instagramFactory', ['$http', 'instagramSearchDataService', function ($http, instagramSearchDataService) {
+    .factory('instagramFactory', ['$sce', '$http', 'instagramSearchDataService', function ($sce, $http, instagramSearchDataService) {
 
         var instagramFactory = {};
 
@@ -17,7 +17,7 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = instagramSearchDataService.getNew("userById", _params);
 
             return $http.jsonp(
-                instagramSearchData.url,
+                $sce.trustAsResourceUrl(instagramSearchData.url),
                 {
                     method: 'GET',
                     params: instagramSearchData.object,
@@ -30,7 +30,7 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = instagramSearchDataService.getNew("mediaFromUserById", _params);
 
             return $http.jsonp(
-                instagramSearchData.url,
+                $sce.trustAsResourceUrl(instagramSearchData.url),
                 {
                     method: 'GET',
                     params: instagramSearchData.object,
@@ -43,7 +43,7 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = instagramSearchDataService.getNew("mediaByTag", _params);
 
             return $http.jsonp(
-                instagramSearchData.url,
+                $sce.trustAsResourceUrl(instagramSearchData.url),
                 {
                     method: 'GET',
                     params: instagramSearchData.object,
@@ -56,7 +56,7 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = instagramSearchDataService.getNew("mediaFromLocationById", _params);
 
             return $http.jsonp(
-                instagramSearchData.url,
+                $sce.trustAsResourceUrl(instagramSearchData.url),
                 {
                     method: 'GET',
                     params: instagramSearchData.object,
@@ -69,7 +69,7 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = instagramSearchDataService.getNew("mediaByCoordinates", _params);
 
             return $http.jsonp(
-                instagramSearchData.url,
+                $sce.trustAsResourceUrl(instagramSearchData.url),
                 {
                     method: 'GET',
                     params: instagramSearchData.object,
@@ -100,7 +100,7 @@ angular.module("jtt_instagram", [])
             var instagramSearchData = {
                 object: {
                     access_token: _params.access_token,
-                    callback: "JSON_CALLBACK"
+                    jsonpCallbackParam: 'callback'
                 },
                 url: "",
             };
@@ -143,6 +143,7 @@ angular.module("jtt_instagram", [])
                     instagramSearchData.url = this.getApiBaseUrl()+"media/search";
                     break;
             }
+
             return instagramSearchData;
         };
     });
